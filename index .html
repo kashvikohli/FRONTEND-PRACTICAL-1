@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch API Simple</title>
+</head>
+<body>
+
+<h2>Data from API</h2>
+<button onclick="getData()">Get Data</button>
+
+<ul id="list"></ul>
+
+<script>
+async function getData() {
+    let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    let data = await response.json();
+
+    let list = document.getElementById("list");
+
+    // clear old data
+    list.innerHTML = "";
+
+    // show only first 3 items (simple)
+    for (let i = 0; i < 3; i++) {
+        let li = document.createElement("li");
+        li.innerText = data[i].title;
+        list.appendChild(li);
+    }
+}
+</script>
+
+</body>
+</html>
