@@ -17,10 +17,10 @@ async function getData() {
 
     let list = document.getElementById("list");
 
-    // clear old data
+    
     list.innerHTML = "";
 
-    // show only first 3 items (simple)
+    
     for (let i = 0; i < 3; i++) {
         let li = document.createElement("li");
         li.innerText = data[i].title;
